@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Click n Browse</title>
+<meta name="description" content="Buy new electronics, repair your devices and sell your old phone. One app, three lives of every device.">
+<meta name="theme-color" content="#070A14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23070A14'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%233D6BFF' stroke-width='3' stroke-dasharray='34 17'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23FF6A1F'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="loader" id="loader"><div class="loader-ring"></div><span>click</span></div>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="#top" class="brand" aria-label="Click n Browse home">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="var(--buy)" stroke-width="3" stroke-dasharray="23 46"/><circle cx="16" cy="16" r="11" fill="none" stroke="var(--repair)" stroke-width="3" stroke-dasharray="23 46" stroke-dashoffset="-23"/><circle cx="16" cy="16" r="11" fill="none" stroke="var(--sell)" stroke-width="3" stroke-dasharray="23 46" stroke-dashoffset="-46"/><circle cx="16" cy="16" r="3.2" fill="var(--text)"/></svg>
+    <span>Click n Browse</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#buy">Buy</a><a href="#repair">Repair</a><a href="#sell">Sell</a><a href="#plus">Plus</a>
+  </nav>
+  <a href="#app" class="btn btn-sm">Get the app</a>
+</header>
+
+<aside class="lives" aria-hidden="true">
+  <div class="lives-track"><div class="lives-fill" id="livesFill"></div></div>
+  <ol>
+    <li data-life="buy"><i></i>Buy</li>
+    <li data-life="repair"><i></i>Repair</li>
+    <li data-life="sell"><i></i>Sell</li>
+  </ol>
+</aside>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero" data-life="none">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow" data-r>Kolkata's all-in-one electronics app</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="w">Buy it.</span><b class="dot d-buy"></b></span>
+        <span class="line"><span class="w">Fix it.</span><b class="dot d-repair"></b></span>
+        <span class="line"><span class="w">Sell it.</span><b class="dot d-sell"></b></span>
+      </h1>
+      <p class="lead" data-r>Every device lives three lives. You buy it new, you repair it when it breaks, you sell it when you upgrade. Click n Browse is with you for all three.</p>
+      <div class="cta-row" data-r>
+        <a href="#buy" class="btn btn-buy">Shop electronics</a>
+        <a href="#sell" class="btn btn-ghost">Price my old phone</a>
+        <a href="#repair" class="btn btn-ghost">Book a repair</a>
+      </div>
+      <ul class="hero-stats" data-r>
+        <li><b class="mono">0%</b><span>No-cost EMI</span></li>
+        <li><b class="mono">90 days</b><span>Repair warranty</span></li>
+        <li><b class="mono">60 sec</b><span>Phone valuation</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll to unbox</span><i></i></div>
+</section>
+
+<!-- LIFE 01 BUY -->
+<section class="chapter ch-buy" id="buy" data-life="buy">
+  <div class="wrap">
+    <div class="col col-left">
+      <p class="chap-tag" data-r><span class="mono">01</span> Life one / Buy</p>
+      <h2 data-r>It starts<br>with a <em>click.</em></h2>
+      <p class="lead" data-r>Mobiles, laptops, TVs, ACs, fridges and every accessory. Real offers, no-cost EMI, delivery to your door or pickup from our store.</p>
+
+      <div class="rail" data-r>
+        <a class="cat" href="#buy"><img src="assets/phone-dark.jpg" alt="Smartphone" loading="lazy"><span>Mobiles</span></a>
+        <a class="cat" href="#buy"><img src="assets/laptop.jpg" alt="Laptop" loading="lazy"><span>Laptops</span></a>
+        <a class="cat" href="#buy"><img src="assets/tv.jpg" alt="Smart TV" loading="lazy"><span>TVs</span></a>
+        <a class="cat" href="#buy"><img src="assets/cameras.jpg" alt="Phone cameras close up" loading="lazy"><span>Accessories</span></a>
+        <a class="cat cat-icon" href="#buy">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="36" height="14" rx="3"/><path d="M10 20h28M14 32c0 4-3 4-3 8M24 32c0 4-3 4-3 8M34 32c0 4-3 4-3 8"/></svg>
+          <span>ACs</span></a>
+        <a class="cat cat-icon" href="#buy">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="4" width="24" height="40" rx="3"/><path d="M12 18h24M17 10v4M17 23v7"/></svg>
+          <span>Fridges</span></a>
+      </div>
+
+      <div class="deals" data-r>
+        <article class="deal">
+          <div class="deal-img"><img src="assets/unbox.jpg" alt="New phone on its box" loading="lazy"><span class="tag">-13%</span></div>
+          <h3>Galaxy S24 FE 5G</h3>
+          <p class="price"><b class="mono">&#8377;38,999</b> <s>&#8377;44,999</s></p>
+          <p class="small">EMI from <span class="mono">&#8377;3,250</span>/mo</p>
+        </article>
+        <article class="deal">
+          <div class="deal-img"><img src="assets/laptop.jpg" alt="Laptop" loading="lazy"><span class="tag">Store pickup</span></div>
+          <h3>Ultrabook 14" i5</h3>
+          <p class="price"><b class="mono">&#8377;54,490</b> <s>&#8377;61,000</s></p>
+          <p class="small">EMI from <span class="mono">&#8377;4,541</span>/mo</p>
+        </article>
+      </div>
+
+      <div class="emi card" data-r>
+        <div class="emi-head"><span>EMI calculator</span><b class="mono" id="emiOut">&#8377;3,250 / month</b></div>
+        <label class="emi-row">Price <b class="mono" id="emiPriceLabel">&#8377;38,999</b>
+          <input type="range" id="emiPrice" min="5000" max="150000" step="500" value="39000"></label>
+        <div class="seg" id="emiMonths" role="group" aria-label="Months">
+          <button data-m="3">3 mo</button><button data-m="6">6 mo</button><button data-m="9">9 mo</button><button data-m="12" class="on">12 mo</button>
+        </div>
+        <p class="small mute">No-cost EMI on major cards. UPI, cards, net banking or pay at store.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFE 02 REPAIR -->
+<section class="chapter ch-repair" id="repair" data-life="repair">
+  <div class="wrap">
+    <div class="col col-right">
+      <p class="chap-tag" data-r><span class="mono">02</span> Life two / Repair</p>
+      <h2 data-r>Cracked?<br>We make it <em>whole.</em></h2>
+      <p class="lead" data-r>Mobiles, laptops and home appliances. Book in three taps, track every step, get a 90-day repair warranty.</p>
+
+      <div class="video-card" data-r>
+        <video src="assets/repair.mp4" poster="assets/repair-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+        <div class="video-label"><i class="live"></i> Repair bench, live status</div>
+      </div>
+
+      <div class="book card" data-r>
+        <div class="book-step"><span class="n mono">1</span><div><p>Device</p>
+          <div class="chips" data-group="device"><button class="on">Mobile</button><button>Laptop</button><button>TV</button><button>AC</button><button>Fridge</button></div></div></div>
+        <div class="book-step"><span class="n mono">2</span><div><p>Problem</p>
+          <div class="chips" data-group="issue"><button class="on">Screen</button><button>Battery</button><button>Not charging</button><button>Water damage</button></div></div></div>
+        <div class="book-step"><span class="n mono">3</span><div><p>Pickup slot</p>
+          <div class="chips" data-group="slot"><button class="on">Today 4 PM</button><button>Tomorrow 11 AM</button><button>Drop at store</button></div></div></div>
+        <div class="book-sum"><span id="bookSum">Mobile / Screen / Today 4 PM</span><b class="mono" id="bookEst">from &#8377;1,499</b></div>
+      </div>
+
+      <div class="track card" data-r>
+        <div class="track-head"><span class="mono">#CNB-R2041</span><span class="pill">90-day warranty</span></div>
+        <ol class="steps" id="steps">
+          <li><i></i><div><b>Picked up</b><span>Rider collected your phone</span></div></li>
+          <li><i></i><div><b>Diagnosed</b><span>Display + touch panel</span></div></li>
+          <li><i></i><div><b>Repaired</b><span>Original grade screen fitted</span></div></li>
+          <li><i></i><div><b>Delivered</b><span>Back in your hand</span></div></li>
+        </ol>
+        <div class="tech">
+          <div class="avatar mono">RD</div>
+          <div><b>Rahul D.</b><span>Senior technician / 6 yrs / 4.8 rating</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFE 03 SELL -->
+<section class="chapter ch-sell" id="sell" data-life="sell">
+  <div class="wrap">
+    <div class="col col-left">
+      <p class="chap-tag" data-r><span class="mono">03</span> Life three / Sell</p>
+      <h2 data-r>Your old phone<br>is worth <em>more.</em></h2>
+      <p class="lead" data-r>Get a fair price in 60 seconds. Free inspection at your door or at our store. Money in your account the same day.</p>
+
+      <div class="value card" data-r>
+        <video class="value-bg" src="assets/night.mp4" poster="assets/night-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+        <div class="value-in">
+          <p class="lbl">Model</p>
+          <div class="chips" id="vModel">
+            <button data-b="52000" class="on">iPhone 13</button><button data-b="31000">Galaxy S22</button><button data-b="12500">Redmi Note 12</button><button data-b="21000">OnePlus 11R</button>
+          </div>
+          <p class="lbl">Condition</p>
+          <div class="seg" id="vCond">
+            <button data-f="1" class="on">Like new</button><button data-f=".84">Good</button><button data-f=".66">Fair</button><button data-f=".42">Cracked</button>
+          </div>
+          <div class="toggles">
+            <label><input type="checkbox" id="vBox" checked> Original box</label>
+            <label><input type="checkbox" id="vChg" checked> Charger</label>
+            <label><input type="checkbox" id="vBill"> Bill</label>
+          </div>
+          <div class="value-out">
+            <span>We pay you</span>
+            <b class="mono" id="vOut">&#8377;0</b>
+            <i class="scanbar"></i>
+          </div>
+        </div>
+      </div>
+
+      <ol class="flow" data-r>
+        <li><b class="mono">01</b><span>Instant online valuation</span></li>
+        <li><b class="mono">02</b><span>IMEI check + free inspection</span></li>
+        <li><b class="mono">03</b><span>Paid by UPI or bank, same day</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- LOOP -->
+<section class="loop" id="loop" data-life="loop">
+  <div class="wrap loop-in">
+    <p class="chap-tag center" data-r>The loop</p>
+    <h2 class="center" data-r>One device.<br>Three lives.<br><em>One app.</em></h2>
+    <div class="loop-space"></div>
+    <div class="exchange" data-r>
+      <div><span>Sell old phone</span><b class="mono c-sell">- &#8377;14,200</b></div>
+      <div class="op">+</div>
+      <div><span>Buy new phone</span><b class="mono c-buy">&#8377;38,999</b></div>
+      <div class="op">=</div>
+      <div class="res"><span>You pay only</span><b class="mono">&#8377;24,799</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLUS -->
+<section class="plus" id="plus">
+  <div class="wrap plus-grid">
+    <div class="plus-card-wrap" data-r>
+      <div class="plus-card" id="plusCard" tabindex="0" aria-label="CnB Plus membership card, press to flip">
+        <div class="face front">
+          <div class="pc-top"><span class="pc-logo">Click n Browse</span><span class="pc-chip"></span></div>
+          <p class="pc-name">PLUS</p>
+          <div class="pc-bot"><span class="mono">MEMBER / 2026</span><span class="mono">&#8377;499 / yr</span></div>
+        </div>
+        <div class="face back">
+          <ul>
+            <li>Free delivery on every order</li>
+            <li>Extra 5% off on mobiles</li>
+            <li>Priority repair, skip the queue</li>
+            <li>2x coins on every exchange</li>
+          </ul>
+          <span class="mono small">Tap to flip back</span>
+        </div>
+      </div>
+      <p class="small mute center">Tap the card</p>
+    </div>
+    <div class="plus-copy">
+      <p class="chap-tag" data-r>Member club</p>
+      <h2 data-r>Every life<br>pays you <em>back.</em></h2>
+      <p class="lead" data-r>Buy, repair or sell and you earn CnB Coins. Plus members earn double and unlock special prices.</p>
+      <div class="coins card" data-r>
+        <div class="jar" id="jar" aria-hidden="true"></div>
+        <div>
+          <p class="small mute">Your CnB Coins</p>
+          <b class="mono coins-n" id="coinsN">0</b>
+          <p class="small">1 coin for every &#8377;100. Use coins as cash on your next order.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="offers" id="offers">
+  <div class="wrap">
+    <div class="offers-head">
+      <div>
+        <p class="chap-tag" data-r>Mega weekend</p>
+        <h2 data-r>Offers that <em>click.</em></h2>
+      </div>
+      <div class="countdown mono" id="countdown" data-r>00 : 00 : 00 : 00</div>
+    </div>
+    <div class="offer-grid">
+      <article class="offer o-buy" data-r>
+        <img src="assets/hero-phone.jpg" alt="Phone glowing in hand" loading="lazy">
+        <div><span class="pill">Free entry</span><h3>Win a new 5G phone</h3><p>Every order this weekend is a free entry. No fee, no catch.</p></div>
+      </article>
+      <article class="offer o-sell" data-r>
+        <img src="assets/used-phones.jpg" alt="Used phones on a table" loading="lazy">
+        <div><span class="pill">Exchange</span><h3>Extra &#8377;2,000</h3><p>Sell your old phone and buy a new one, get extra value on top.</p></div>
+      </article>
+      <article class="offer o-repair" data-r>
+        <img src="assets/repair-poster.jpg" alt="Repair workbench" loading="lazy">
+        <div><span class="pill">Repair week</span><h3>20% off screens</h3><p>Any phone screen replacement with 90-day warranty.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BEHIND THE COUNTER -->
+<section class="admin" id="store">
+  <div class="wrap admin-grid">
+    <div>
+      <p class="chap-tag" data-r>Behind the counter</p>
+      <h2 data-r>One panel to<br>run the <em>store.</em></h2>
+      <p class="lead" data-r>Separate logins for customers, staff and admin. Inventory with IMEI tracking, repair jobs, buy-back deals, sales and profit reports in one place.</p>
+      <div class="roles" data-r><span>Customer app</span><span>Staff app</span><span>Admin panel</span></div>
+    </div>
+    <div class="dash card" data-r>
+      <div class="dash-top"><b>Today</b><span class="mono small mute">Kolkata store</span></div>
+      <div class="kpis">
+        <div><span>Sales</span><b class="mono" data-count="241500" data-pre="&#8377;">0</b></div>
+        <div><span>Profit</span><b class="mono c-repair" data-count="38200" data-pre="&#8377;">0</b></div>
+        <div><span>Repairs open</span><b class="mono" data-count="23">0</b></div>
+        <div><span>Phones bought</span><b class="mono c-sell" data-count="11">0</b></div>
+      </div>
+      <svg class="bars" viewBox="0 0 280 110" aria-label="Weekly sales bar chart">
+        <g id="barsG"></g>
+      </svg>
+      <div class="imei"><span class="mono">IMEI 35 209811 446 721</span><span class="pill ok">Verified / In stock</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST + APP -->
+<section class="app" id="app">
+  <div class="wrap">
+    <ul class="trust" data-r>
+      <li><b>IMEI verified</b><span>Every phone we buy or sell</span></li>
+      <li><b>Secure payments</b><span>UPI, cards, EMI, net banking</span></li>
+      <li><b>Store pickup</b><span>Order online, collect today</span></li>
+      <li><b>Real warranty</b><span>On new, repaired and refurbished</span></li>
+    </ul>
+    <div class="app-cta">
+      <h2 data-r>Your whole device life,<br><em>in your pocket.</em></h2>
+      <p class="lead" data-r>Click n Browse app is coming soon to Android and iOS.</p>
+      <div class="cta-row center" data-r>
+        <a class="store-btn" href="#app"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3l13 9-13 9z"/></svg><span><small>Coming soon on</small>Google Play</span></a>
+        <a class="store-btn" href="#app"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3c0 2-1.6 3.6-3.4 3.6C12.5 4.7 14.2 3 16 3zM19 17c-.8 1.9-2 4-3.5 4-1.3 0-1.7-.8-3.3-.8s-2 .8-3.3.8C7.300 21 4 16.6 4 12.4c0-3.4 2.200-5.200 4.300-5.200 1.400 0 2.500.9 3.400.9.8 0 2.200-1 3.800-.9 1.200.1 2.800.6 3.700 2.100-3.300 1.900-2.600 6.200-.2 7.700z"/></svg><span><small>Coming soon on</small>App Store</span></a>
+      </div>
+    </div>
+  </div>
+  <footer class="foot wrap">
+    <span>Click n Browse / Buy. Repair. Sell.</span>
+    <span class="mute">Kolkata, India</span>
+  </footer>
+</section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script src="ui.js"></script>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
